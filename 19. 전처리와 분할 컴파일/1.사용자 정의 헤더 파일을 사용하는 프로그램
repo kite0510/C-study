@@ -1,0 +1,24 @@
+student.h (사용자 정의 헤더 파일):
+// student.h
+// 사용자 정의 헤더 파일 - student 구조체 선언
+
+typedef struct {      // student 구조체 선언 (typedef 사용)
+    int num;          // 학번
+    char name[20];    // 이름
+} Student;            // 구조체 별칭 Student 정의
+
+---
+main.c (소스 파일):
+// main.c
+// 소스 파일 - main.c
+
+#include <stdio.h>       // 시스템 헤더 파일의 내용 포함
+#include "student.h"     // 사용자 정의 헤더 파일의 내용 포함
+
+int main(void) {
+    Student a = { 315, "홍길동" }; // 구조체 변수 선언과 초기화 (typedef 사용)
+
+    printf("학번 : %d, 이름 : %s\n", a.num, a.name); // 멤버 출력
+
+    return 0;
+}
